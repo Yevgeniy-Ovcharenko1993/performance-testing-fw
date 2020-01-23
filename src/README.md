@@ -5,12 +5,12 @@ Performance testing project framework for performance testing with dashboard plu
 Full configuration: 
 - Add https://github.com/NovaTecConsulting/JMeter-InfluxDB-Writer/releases plugin to jmeter 
 - Download the Plugins Manager JAR file and put it into JMeter's lib/ext directory. https://jmeter-plugins.org/wiki/PluginsManager/
-- Run jmeter 
+- Launch jmeter 
 - Add BackEnd listener 
 - Choose the rocks.nt.apm.jmeter.JMeterInfluxDBBackendListenerClient in Backend listener implementation drop down list 
 - configure your data-writting 
-    1. influxdbUrl http://host_to_change:8086/write?db=<ACTUAL_DB_NAME> needs to be created before running Jmeter scenario 
-    2. measurement <YOUR_OWN_NAME> creates automatically on start up Jmeter scenario 
+    1. influxdbUrl http://<host_to_change>:8086/write?db=<ACTUAL_DB_NAME> needs to be created before running Jmeter scenario 
+   
 - create Jmeter scenario 
 - open the src folder and run docker-compose up (wait for running services)
 - create databasee in InfluxDB by executing the command curl -i -XPOST http://localhost:8086/query --data-urlencode "q=CREATE DATABASE <DATABASE_NAME>"
